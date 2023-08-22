@@ -8,7 +8,6 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <%= javascript_pack_tag 'calendar', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   </head>
 
@@ -16,12 +15,8 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-<<<<<<< HEAD
-    <nav class="navbar navbar-light p-3 border-bottom border-gray" style="background-color: #FFDEBF;">
-
-=======
     <nav class="navbar navbar-light p-2 border-bottom border-gray" style="background-color: #FFDEBF;">
->>>>>>> 44219f3e3d03c6c427ec4545f24b76e5a24ed71d
+
     <%= link_to cats_path do %>
       <img src="https://cdn4.iconfinder.com/data/icons/animals-177/512/Cat-512.png" width="70px" height="70px">
     <% end %>
