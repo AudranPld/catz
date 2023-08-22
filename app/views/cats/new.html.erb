@@ -1,0 +1,17 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Tell us about your cat</h3>
+        <%= simple_form_for @cat do |f| %>
+          <%= f.input :adress, placeholder: 'Bordeaux' %>
+          <%= f.label :sex %>
+          <%= f.select :sex, options_for_select(%w[Male Female]) %>
+          <%= f.input :breed %>
+          <%= f.input :price, input_html: { min: '0', step: 'any' }, placeholder: 'For a day' %>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
