@@ -5,4 +5,7 @@ Rails.application.routes.draw do
     resources :reservations, only: %i[new]
     resources :reservations, only: %i[create], path: ''
   end
+  namespace :admin do
+    resources :cats, :comments
+  end
 end
