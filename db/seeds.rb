@@ -9,7 +9,14 @@
 cat1 = { name: 'Mimi', adress: 'Bordeaux', gender: "Female", breed: "Ragdoll", price: 25 }
 cat2 = { name: 'Chouchou', adress: 'Paris', gender: "Male", breed: "British Short Hair", price: 50 }
 
-[cat1, cat2].each do |attributes|
-  cat = Cat.create!(attributes)
-  puts 'Created cat'
+
+10.times do
+  email = Faker::Internet.email
+  password = Faker::Internet.password(min_length: 8)
+  user = { email: email, password: password }
+  puts user
+  User.create!(user)
 end
+
+
+puts 'Created cat'

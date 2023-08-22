@@ -1,0 +1,13 @@
+<h1>Availability of your cat</h1>
+<%= simple_form_for [@cat, @reservation] do |f| %>
+
+  <%= f.input :starting_date,
+              as: :string,
+              input_html: { data: { controller: "datepicker" } },
+              label: "Add an availability" %>
+
+  <%# <%= f.hidden_field  :starting_date, as: :date %>
+  <% f.hidden_field  :ending_date, as: :date %>
+
+  <%= f.button :submit, "Add" %>
+<% end %>
