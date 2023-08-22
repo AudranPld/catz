@@ -1,9 +1,10 @@
 <h1>Availability of your cat</h1>
-<%= simple_form_for [@cat, @reservation] do |f| %>
+<%= simple_form_for @reservation, url: cat_reservations_path(@cat) do |f| %>
+
 
   <%= f.input :starting_date,
               as: :string,
-              input_html: { data: { controller: "datepicker" } },
+              input_html: { data: { mode: "range", controller: "datepicker" } },
               label: "Add an availability" %>
 
   <%# <%= f.hidden_field  :starting_date, as: :date %>
