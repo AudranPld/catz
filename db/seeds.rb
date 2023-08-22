@@ -1,5 +1,3 @@
-
-
 puts "Starting seed"
 
 User.destroy_all()
@@ -14,7 +12,8 @@ rand(10..20).times do
       adress: Faker::Internet.email,
       gender: ["male", "female"].sample,
       breed: ["Siamese", "Persian", "Maine Coon", "Ragdoll", "Bengal", "Sphynx", "Abyssinian", "British Shorthair", "Scottish Fold", "Russian Blue"].sample,
-      price: rand(5..50)
+      price: rand(5..50),
+      user_id: user.id
       })
 
     rand(1..3).times do
