@@ -4,8 +4,7 @@
 <ul>
 <% @cats.each do |cat| %>
   <li>
-  <%= link_to cat.breed, cat_path(cat) %>
+  <%= link_to cat.name, cat_path(cat) %>
   </li>
 <% end %>
 </ul>
-
