@@ -1,0 +1,22 @@
+<h1>all the cats i own</h1>
+
+
+<% if current_user.cats.nil? %>
+
+<div>Vous n'avez pas de chats blank?
+nil?
+empty?</div>
+
+<% else %>
+
+<ul>
+<% current_user.cats.each do |cat| %>
+  <li>
+  <%= link_to cat.name, admin_cat_path(cat) %>
+  </li>
+<% end %>
+</ul>
+
+<% end %>
+
+<%= link_to "Add a new cat", new_cat_path  %>

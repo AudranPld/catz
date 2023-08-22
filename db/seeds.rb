@@ -6,9 +6,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-cat1 = { name: 'Mimi', adress: 'Bordeaux', gender: "Female", breed: "Ragdoll", price: 25 }
-cat2 = { name: 'Chouchou', adress: 'Paris', gender: "Male", breed: "British Short Hair", price: 50 }
-
+Cat.destroy_all
+User.destroy_all
 
 10.times do
   email = Faker::Internet.email
@@ -18,5 +17,10 @@ cat2 = { name: 'Chouchou', adress: 'Paris', gender: "Male", breed: "British Shor
   User.create!(user)
 end
 
+cat1 = { name: 'Mimi', adress: 'Bordeaux', gender: "Female", breed: "Ragdoll", price: 25, user_id: User.all.sample.id }
+cat2 = { name: 'Chouchou', adress: 'Paris', gender: "Male", breed: "British Short Hair", price: 50, user_id: User.all.sample.id }
 
-puts 'Created cat'
+[cat1, cat2].each do |attributes|
+  cat = Cat.create!(attributes)
+  puts "Created #{cat.name}"
+end
