@@ -1,5 +1,5 @@
 <h1>all cats</h1>
-<%= link_to "Add a new cat", new_cat_path  %>
+<%= link_to "Show my cats", admin_cats_path  %>
 
 <ul>
 <% @cats.each do |cat| %>
@@ -8,5 +8,3 @@
   </li>
 <% end %>
 </ul>
-
-<%= link_to "Show my cats", admin_cats_path  %>
