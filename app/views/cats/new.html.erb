@@ -4,6 +4,7 @@
       <div class="bg-white rounded p-3 shadow">
         <h3>Tell us about your cat</h3>
         <%= simple_form_for @cat do |f| %>
+          <%= f.input :name, placeholder: 'Your meow name' %>
           <%= f.input :adress, placeholder: 'Bordeaux' %>
           <%= f.input :sex, collection: Cat.sexes.keys, prompt: 'Select sex' %>
           <%= f.input :breed %>
