@@ -13,6 +13,14 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <nav class="navbar navbar-light p-3 border-bottom border-gray" style="background-color: #FFDEBF;">
+    <%= link_to cats_path do %>
+      <img src="https://cdn4.iconfinder.com/data/icons/animals-177/512/Cat-512.png" width="70px" height="70px">
+    <% end %>
+      <ul class="nav navbar-nav navbar-right ml-auto">
+        <li id="navbar-link"><button type="button" class="custom-button"><%= link_to 'Anounce your meow here', '#' %></li></button>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>

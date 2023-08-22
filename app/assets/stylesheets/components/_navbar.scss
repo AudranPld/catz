@@ -10,3 +10,19 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.custom-button {
+  background-color: #DB8434;
+  border-radius: 5px;
+  border: 3px white;
+  box-shadow: 2px 2px 5px rgba(185, 181, 181, 0.2);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    color: #9a5718;
+  }
+}
