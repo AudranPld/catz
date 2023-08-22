@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+cat1 = { name: 'Mimi', adress: 'Bordeaux', gender: "Female", breed: "Ragdoll", price: 25 }
+cat2 = { name: 'Chouchou', adress: 'Paris', gender: "Male", breed: "British Short Hair", price: 50 }
 
 
 10.times do
