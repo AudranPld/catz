@@ -1,3 +1,4 @@
+
 require 'open-uri'
 
 puts "Starting seed"
@@ -32,12 +33,22 @@ cats_name = cat_image_urls.keys
       adress: Faker::Internet.email,
       breed: ["Siamese", "Persian", "Maine Coon", "Ragdoll", "Bengal", "Sphynx", "Abyssinian", "British Shorthair", "Scottish Fold", "Russian Blue"].sample,
       price: rand(5..50),
-      # user: user
+      user_id: user.id
     })
     url = cat_image_urls[cat_name]
     file = URI.open(url)
     cat.photo.attach(io: file, filename: "cat_image.jpg", content_type: "image/jpg")
     cat.save!
+
+    rand(1..3).times do
+      dat = Faker::Date.between(from: Date.new(2000, 1, 1), to: Date.today)
+      Reservation.create({
+        starting_date: dat,
+        ending_date: dat,
+        user: user,
+        cat: cat
+      })
+    end
   end
   # rand(1..3).times do
   #   dat = Faker::Date.between(from: Date.new(2000, 1, 1), to: Date.today)

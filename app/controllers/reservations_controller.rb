@@ -5,16 +5,16 @@ class ReservationsController < ApplicationController
   end
 
   def create
-
     @reservation = Reservation.new(reservation_params)
-    @reservation.starting_date = Date.parse(params[:reservation][:starting_date])
 
-    @reservation.ending_date = @reservation.starting_date
-    @reservation.user_id = 1
+    @reservation.starting_date = Date.parse(params[:reservation][:starting_date].split(" to ")[0])
+    @reservation.ending_date = Date.parse(params[:reservation][:starting_date].split(" to ")[1])
+    @reservation.user_id = User.last.id #current_user.id
     @reservation.cat_id = params[:cat_id]
     if @reservation.save
-      redirect_to cat_reservations_path(@reservation), notice: "The reservation is successfully created."
+      redirect_to cat_reservations_path(@reservation.cat_id), notice: "The reservation is successfully created."
     else
+      puts @reservation.errors.full_messages
       render :new, status: :unprocessable_entity
     end
   end
