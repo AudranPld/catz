@@ -18,8 +18,17 @@
   box-shadow: 2px 2px 5px rgba(185, 181, 181, 0.2);
 }
 
-a {
+.navbar a {
   color: white;
+  text-decoration: none;
+
+  &:hover {
+    color: #9a5718;
+  }
+}
+
+a {
+  color: #DB8434;
   text-decoration: none;
 
   &:hover {

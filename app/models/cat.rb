@@ -5,5 +5,6 @@ class Cat < ApplicationRecord
   validates :breed, presence: true
   validates :price, presence: true
   validates :name, presence: true
+  has_one_attached :image
   enum gender: { male: 'Male', female: 'Female' }
 end
