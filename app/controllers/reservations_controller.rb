@@ -14,7 +14,6 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to cat_reservations_path(@reservation.cat_id), notice: "The reservation is successfully created."
     else
-      puts @reservation.errors.full_messages
       render :new, status: :unprocessable_entity
     end
   end
