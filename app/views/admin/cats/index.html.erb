@@ -1,11 +1,8 @@
 <h1>all the cats i own</h1>
 
+<% if current_user.cats.empty? %>
 
-<% if current_user.cats.nil? %>
-
-<div>Vous n'avez pas de chats blank?
-nil?
-empty?</div>
+<p>Vous n'avez pas de chats</p>
 
 <% else %>
 

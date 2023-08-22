@@ -15,7 +15,8 @@ class CatsController < ApplicationController
 
   def create
     @cat = Cat.new(cat_params)
-    if @cat.save
+    @cat.user_id = current_user.id
+    if @cat.save!
       redirect_to cats_path(@cat)
     else
       render :new, status: :unprocessable_entity
