@@ -1,5 +1,5 @@
 <h1>Availability of your cat</h1>
-<%= simple_form_for @reservation do |f| %>
+<%= simple_form_for [@cat, @reservation] do |f| %>
 
   <%= f.input :starting_date,
               as: :string,
