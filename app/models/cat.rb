@@ -4,4 +4,5 @@ class Cat < ApplicationRecord
   validates :sex, presence: true
   validates :breed, presence: true
   validates :price, presence: true
+  enum sex: { 'Male': 0, 'Female': 1 }
 end
