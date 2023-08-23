@@ -1,21 +1,20 @@
 <h1 class="typo">All the catz</h1>
-
-<div class="card-main">
-  <% @cats.each do |cat| %>
-    <%= link_to cat_path(cat) do %>
-    <div class="card-index">
-      <img src=<%= cat.photo.url %> />
-      <div class="card-index-infos">
-        <div>
-          <h2><%= cat.name %></h2>
-          <p><%= cat.breed %></p>
-        </div>
-        <div class="card-index-right">
-          <h2><i class="fa-solid fa-<%= cat.gender == "female" ? "venus" : "mars" %>" style="color: #DB8434;;"></i></h2>
-          <p><%= cat.price %> € / j</p>
+  <div class="card-main">
+    <% @cats.each do |cat| %>
+      <%= link_to cat_path(cat) do %>
+      <div class="card-index">
+        <img src=<%= cat.photo.url %> />
+        <div class="card-index-infos">
+          <div>
+            <h2><%= cat.name %></h2>
+            <p><%= cat.breed %></p>
+          </div>
+          <div class="card-index-right">
+            <h2><i class="fa-solid fa-<%= cat.gender == "female" ? "venus" : "mars" %>" style="color: #DB8434;;"></i></h2>
+            <p><%= cat.price %> € / j</p>
+          </div>
         </div>
       </div>
-    </div>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
