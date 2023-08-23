@@ -1,7 +1,6 @@
 
 
 .card-main {
-
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Trois colonnes de largeur égale */
   gap: 20px;
@@ -11,7 +10,6 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-
   padding: 10px;
 }
 
@@ -51,4 +49,8 @@
 
 .card-index-right > h2 {
   text-align: right;
+}
+
+.typo {
+  font-family: 'Merriweather', serif;
 }
