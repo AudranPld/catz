@@ -1,32 +1,93 @@
-.card-cat {
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-}
-
-.card-cat img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-
-.card-cat h2 {
-  font-size: 16px;
-  font-weight: bold;
+/* Réinitialisation des marges et des rembourrages */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.card-cat p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
+/* Styles de base pour le corps de la page */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
 }
 
-.card-cat .card-cat-infos {
-  padding: 16px;
+/* Conteneur principal */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Div regroupant le contenu principal */
+.all {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Style pour l'image */
+.picture {
+  flex: 1;
+  max-width: 50%;
+}
+
+.picture img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Style pour les informations sur le chat */
+.Name {
+  flex: 1;
+  max-width: 50%;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Name h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.Name h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.Name p {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Style pour les commentaires */
+.comments {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comments h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.comments div {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.comments p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.comments i.fa-star {
+  color: gold;
+  margin-right: 5px;
 }

@@ -1,10 +1,32 @@
-<div class="card-cat">
-  <%= cl_image_tag @cat.photo.key if @cat.photo.attached? %>
-  <div class="card-cat-infos">
-    <h2><strong><%= @cat.name %></strong></h2>
-    <p><strong><%= @cat.adress %></strong></p>
-    <p><strong><%= Cat.genders[@cat.gender] %></strong></p>
-    <p><strong><%= @cat.breed %></strong></p>
-    <p><strong><%= @cat.price %> €/day</strong></p>
+<div class="container">
+  <div class="all">
+    <div class="picture">
+      <%= cl_image_tag @cat.photo.key if @cat.photo.attached? %>
+    </div>
+    <div class="Name">
+      <h2><strong><%= @cat.name %> </strong><i class="fa-solid fa-<%= @cat.gender == "female" ? "venus" : "mars" %>" style="color: #DB8434;;"></i></h2>
+      <h3><%= @cat.breed %></h3>
+      <p>"Découvrez notre adorable félin, nommé <%= @cat.name %> ! <%= @cat.name %> est une beauté féline aux yeux envoûtants et au pelage soyeux. Son caractère joueur et curieux fait d'elle la compagne parfaite pour égayer vos journées. Elle aime explorer de nouveaux recoins et se blottir à vos côtés lors des moments calmes. Avec son élégance naturelle et son esprit espiègle, <%= @cat.name %> incarne parfaitement la grâce féline et l'amour que les chats apportent dans nos vies. Elle a hâte de vous rencontrer !"</p>
+    </div>
+  </div>
+  <div class="comments">
+    <h2>Commentaires</h2>
+      <div>
+        <p>Emma
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i></p>
+        <p>Passer une journée avec <%= @cat.name %>  a été comme une parenthèse enchantée. Son énergie débordante et sa curiosité m'ont divertie du matin au soir. C'était une aventure incroyable, et je n'oublierai jamais le plaisir de jouer avec elle et de la voir explorer avec autant d'enthousiasme. <%= @cat.name %> , tu es une petite étoile brillante !</p>
+      </div>
+      <div>
+        <p>Elodie
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i></p>
+        <p>Trois jours incroyables en compagnie de <%= @cat.name %>  ! Elle m'a accueilli dans son monde avec chaleur et joie. Les moments de câlins relaxants ont été tout aussi précieux que les séances de jeu endiablées. Chaque jour avec elle était une nouvelle découverte, une nouvelle aventure. <%= @cat.name %> , tu as rendu ces trois jours mémorables."</p>
+      </div>
   </div>
 </div>
