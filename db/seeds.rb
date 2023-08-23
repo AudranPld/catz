@@ -22,8 +22,12 @@ cat_image_urls = {
 
 cats_name = cat_image_urls.keys
 
-5.times do
-  user = User.create({ email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8) })
+5.times do |index|
+  if index == 0
+    user = User.create({ email: "test@test.test", password: "testtest"})
+  else
+    user = User.create({ email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8) })
+  end
   2.times do
     cat_name = cats_name.sample
     cats_name.delete(cat_name)
@@ -50,14 +54,5 @@ cats_name = cat_image_urls.keys
       })
     end
   end
-  # rand(1..3).times do
-  #   dat = Faker::Date.between(from: Date.new(2000, 1, 1), to: Date.today)
-  #   Reservation.create({
-  #     starting_date: dat,
-  #     ending_date: dat,
-  #     # user: user,
-  #     # cat: cat
-  #   })
-  # end
 end
 puts 'Done'
