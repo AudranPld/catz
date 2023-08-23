@@ -7,7 +7,7 @@
       <h2><strong><%= @cat.name %> </strong><i class="fa-solid fa-<%= @cat.gender == "female" ? "venus" : "mars" %>" style="color: #DB8434;;"></i></h2>
       <h3><%= @cat.breed %></h3>
       <p>Discover our adorable feline, named <%= @cat.name %>! <%= @cat.name %> is a feline beauty with captivating eyes and silky fur. Her playful and curious nature makes her the perfect companion to brighten up your days. She loves to explore new corners and cuddle up by your side during quiet moments. With her natural elegance and playful spirit, <%= @cat.name %> perfectly embodies feline grace and the love that cats bring into our lives. She can't wait to meet you!</p>
-      <p class="price"><%= @cat.price %>€/day</p>
+      <p class="price"> <strong><%= @cat.price %>€/day</strong></p>
       <div class="book-cat"><strong><%= link_to "Book #{@cat.name}", new_cat_reservation_path(@cat.id)  %></strong></div>
     </div>
   </div>
