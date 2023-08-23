@@ -19,10 +19,19 @@
     <%= link_to cats_path do %>
       <img src="https://cdn4.iconfinder.com/data/icons/animals-177/512/Cat-512.png" width="70px" height="70px">
     <% end %>
+      <h1 class="typo">Catz</h1>
       <ul class="nav navbar-nav navbar-right ml-auto">
-        <li id="navbar-link"><button type="button" class="custom-button"><%= link_to 'Sign in', '#' %></li></button>
+        <li id="navbar-link"><button type="button" class="custom-button">
+        <% if user_signed_in? %>
+          <%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete } %>
+        <% else %>
+          <%= link_to 'Sign in / up', new_user_session_path %>
+        <% end %>
+        </li></button>
       </ul>
     </nav>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
