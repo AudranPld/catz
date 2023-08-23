@@ -28,13 +28,14 @@ body {
 /* Style pour l'image */
 .picture {
   flex: 1;
-  max-width: 50%;
+  max-width: 100%;
 }
 
 .picture img {
   max-width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  display: cover;
+  object-fit: cover;
 }
 
 /* Style pour les informations sur le chat */
