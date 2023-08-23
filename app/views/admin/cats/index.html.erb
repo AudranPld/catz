@@ -1,19 +1,25 @@
-<h1>all the cats i own</h1>
-
-<% if current_user.cats.empty? %>
-
-<p>Vous n'avez pas de chats</p>
-
-<% else %>
-
-<ul>
-<% current_user.cats.each do |cat| %>
-  <li>
-  <%= link_to cat.name, admin_cat_path(cat) %>
-  </li>
-<% end %>
-</ul>
-
-<% end %>
-
-<%= link_to "Add a new cat", new_cat_path  %>
+<div class="title-div">
+  <h1 class="typo">All my cats</h1>
+  <% if user_signed_in? %>
+    <%= link_to 'Add a cat', new_cat_path, class: "custom-button title-btn" %>
+    <% end %>
+</div>
+<div class="card-main">
+  <% current_user.cats.each do |cat| %>
+    <%= link_to cat_path(cat) do %>
+    <div class="card-index">
+      <img src=<%= cat.photo.url %> />
+      <div class="card-index-infos">
+        <div>
+          <h2><%= cat.name %></h2>
+          <p><%= cat.breed %></p>
+        </div>
+        <div class="card-index-right">
+          <h2><i class="fa-solid fa-<%= cat.gender == "female" ? "venus" : "mars" %>" style="color: #DB8434;;"></i></h2>
+          <p><%= cat.price %> € / j</p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>

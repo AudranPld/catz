@@ -1,3 +1,11 @@
+
+#catz {
+  font-weight: bold;
+  color: #333;
+  margin: 20px 0;
+  font-size: 48px;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -11,17 +19,10 @@
   width: 40px;
 }
 
-.custom-button {
-  background-color: #DB8434;
-  border-radius: 5px;
-  border: 3px white;
-  box-shadow: 2px 2px 5px rgba(185, 181, 181, 0.2);
-}
-
 .navbar a {
   color: white;
   text-decoration: none;
-
+  transition: color 0.3s ease;
   &:hover {
     color: #9a5718;
   }

@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     resources :reservations, only: %i[create], path: ''
   end
   namespace :admin do
-    resources :cats, :comments
+    resources :cats, only: %i[index show]
   end
 end
