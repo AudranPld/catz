@@ -1,10 +1,21 @@
-<h1>all cats</h1>
-<%= link_to "Show my cats", admin_cats_path  %>
+<h1 class="typo">All the cats</h1>
 
-<ul>
-<% @cats.each do |cat| %>
-  <li>
-  <%= link_to cat.name, cat_path(cat) %>
-  </li>
-<% end %>
-</ul>
+<div class="card-main">
+  <% @cats.each do |cat| %>
+    <%= link_to cat_path(cat) do %>
+    <div class="card-index">
+      <img src=<%= cat.photo.url %> />
+      <div class="card-index-infos">
+        <div>
+          <h2><%= cat.name %></h2>
+          <p><%= cat.breed %></p>
+        </div>
+        <div class="card-index-right">
+          <h2><i class="fa-solid fa-<%= cat.gender == "female" ? "venus" : "mars" %>" style="color: #DB8434;;"></i></h2>
+          <p><%= cat.price %> € / j</p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>

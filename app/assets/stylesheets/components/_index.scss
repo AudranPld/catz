@@ -3,3 +3,10 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+
+.container > h1 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  margin: 20px 0;
+}
