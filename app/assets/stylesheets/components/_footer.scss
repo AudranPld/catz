@@ -24,3 +24,9 @@
 .footer .fa-heart {
   color: #D23333;
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Minimum 100% de la hauteur de la vue */
+}
