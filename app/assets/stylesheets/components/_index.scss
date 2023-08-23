@@ -4,9 +4,27 @@
 @import "form_legend_clear";
 @import "navbar";
 
-.container > h1 {
-  font-size: 30px;
-  font-weight: bold;
-  color: #333;
-  margin: 20px 0;
+
+
+.custom-button {
+  background-color: #DB8434;
+  border-radius: 5px;
+  border: 3px white;
+  box-shadow: 2px 2px 5px rgba(185, 181, 181, 0.2);
+  padding: 5px;
+}
+
+.title-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-btn {
+  color: white;
+  height: 100%;
+  background-color: rgb(142, 170, 225);
+  transition: color 0.3s ease;
+  &:hover {
+    color: #45236a;
+  }
 }

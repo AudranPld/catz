@@ -16,19 +16,17 @@
     <p class="alert"><%= alert %></p>
 
     <nav class="navbar navbar-light p-3 border-bottom border-gray" style="background-color: #FFDEBF;">
-    <%= link_to cats_path do %>
-      <img src="https://cdn4.iconfinder.com/data/icons/animals-177/512/Cat-512.png" width="70px" height="70px">
-    <% end %>
-      <h1 class="typo">Catz</h1>
-      <ul class="nav navbar-nav navbar-right ml-auto">
-        <li id="navbar-link"><button type="button" class="custom-button">
+      <%= link_to cats_path do %>
+        <img src="https://cdn4.iconfinder.com/data/icons/animals-177/512/Cat-512.png" width="70px" height="70px">
+      <% end %>
+      <%= link_to 'Catz', cats_path, class: "typo", id: "catz" %>
+      <div>
         <% if user_signed_in? %>
-          <%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete } %>
+          <%= link_to 'Sign out', destroy_user_session_path, class: "custom-button", data: { turbo_method: :delete } %>
         <% else %>
-          <%= link_to 'Sign in / up', new_user_session_path %>
+          <%= link_to 'Sign in / up', new_user_session_path, class: "custom-button" %>
         <% end %>
-        </li></button>
-      </ul>
+      </div>
     </nav>
     <div class="container">
       <%= yield %>

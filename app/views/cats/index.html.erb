@@ -1,4 +1,10 @@
-<h1 class="typo">All the cats</h1>
+
+<div class="title-div">
+  <h1 class="typo">Which cat do you like</h1>
+  <% if user_signed_in? %>
+    <%= link_to 'Show all my catz', admin_cats_path, class: "custom-button title-btn" %>
+    <% end %>
+</div>
 
 <div class="card-main">
   <% @cats.each do |cat| %>
