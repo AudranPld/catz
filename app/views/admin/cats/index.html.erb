@@ -8,7 +8,7 @@
   <% current_user.cats.each do |cat| %>
     <%= link_to cat_path(cat) do %>
     <div class="card-index">
-      <img src=<%= cat.photo.url %> />
+      <%= cl_image_tag cat.photo.key %>
       <div class="card-index-infos">
         <div>
           <h2><%= cat.name %></h2>
