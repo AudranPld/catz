@@ -1,9 +1,10 @@
-<h1><strong><%= @cat.name %></strong></h1>
-<%= cl_image_tag @cat.photo.key if @cat.photo.attached? %>
-<ul>
-  <li><%= @cat.adress %></li>
-  <li><%= Cat.genders[@cat.gender] %></li>
-  <li><%= @cat.breed %></li>
-  <li><%= @cat.price %>€ for one day</li>
-</ul>
-<div id="calendar"></div>
+<div class="card-cat">
+  <%= cl_image_tag @cat.photo.key if @cat.photo.attached? %>
+  <div class="card-cat-infos">
+    <h2><strong><%= @cat.name %></strong></h2>
+    <p><strong><%= @cat.adress %></strong></p>
+    <p><strong><%= Cat.genders[@cat.gender] %></strong></p>
+    <p><strong><%= @cat.breed %></strong></p>
+    <p><strong><%= @cat.price %> €/day</strong></p>
+  </div>
+</div>
