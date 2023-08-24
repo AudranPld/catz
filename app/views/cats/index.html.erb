@@ -17,24 +17,24 @@
       <%= submit_tag "Search", name: "", class: "btn btn-orange rounded-pill" %>
     <% end %>
   </div>
-</div>
+ </div>
 
-<div class="card-main">
-  <% @cats.each do |cat| %>
-    <%= link_to cat_path(cat) do %>
-    <div class="card-index">
-      <%= cl_image_tag cat.photo.key %>
-      <div class="card-index-infos">
-        <div>
-          <h2><%= cat.name %></h2>
-          <p><%= cat.breed %></p>
-        </div>
-        <div class="card-index-right">
-          <h2><i class="fa-solid fa-<%= cat.gender == "female" ? "venus" : "mars" %>" style="color: #DB8434;;"></i></h2>
-          <p><%= cat.price %> € / d</p>
+  <div class="card-main">
+    <% @cats.each do |cat| %>
+      <%= link_to cat_path(cat) do %>
+      <div class="card-index">
+        <%= cl_image_tag cat.photo.key %>
+        <div class="card-index-infos">
+          <div>
+            <h2><%= cat.name %></h2>
+            <p><%= cat.breed %></p>
+          </div>
+          <div class="card-index-right">
+            <h2><i class="fa-solid fa-<%= cat.gender == "female" ? "venus" : "mars" %>" style="color: #DB8434;;"></i></h2>
+            <p><%= cat.price %> € / d</p>
+          </div>
         </div>
       </div>
-    </div>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
