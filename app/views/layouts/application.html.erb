@@ -13,21 +13,29 @@
   </head>
 
   <body>
-  <div class="wrapper">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
     <nav class="navbar navbar-light p-2 border-bottom border-gray" style="background-color: #FFDEBF;">
-      <%= link_to cats_path do %>
-        <img src="https://cdn4.iconfinder.com/data/icons/animals-177/512/Cat-512.png" width="50px" height="50px">
-      <% end %>
-      <%= link_to 'Catz', cats_path, id: "catz" %>
+      <div class="d-flex align-items-center">
+        <%= link_to cats_path do %>
+          <img src="https://cdn4.iconfinder.com/data/icons/animals-177/512/Cat-512.png" width="50px" height="50px">
+        <% end %>
+        <%= link_to 'Catz', cats_path, id: "catz" %>
+        </div>
+        <div class="d-flex align-items-center ml-auto">
+        <% if user_signed_in? %>
+          <%= link_to 'See all my catz', admin_cats_path, class: "blue-btn" %>
+        <% end %>
+        <div class="px-2"></div>
       <div>
         <% if user_signed_in? %>
           <%= link_to 'Sign out', destroy_user_session_path, class: "orange-btn", data: { turbo_method: :delete } %>
         <% else %>
           <%= link_to 'Sign in / up', new_user_session_path, class: "orange-btn" %>
         <% end %>
+      </div>
+      </div>
       </div>
     </nav>
     <div class="container">
@@ -44,6 +52,5 @@
       <div class="footer-copyright">
         Made with <i class="fas fa-heart"></i> at Le Wagon
       </div>
-    </div>
   </body>
 </html>
