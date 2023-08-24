@@ -22,9 +22,12 @@
 .title-btn {
   color: white;
   height: 100%;
-  background-color: rgb(142, 170, 225);
-  transition: color 0.3s ease;
+  background-color: #61769f;
+  border: none;
+  transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease;
   &:hover {
-    color: #45236a;
+    color: #61769f;
+    background-color: white;
+    border: 1px solid #61769f;
   }
 }
