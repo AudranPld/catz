@@ -5,7 +5,7 @@
         <h3>Tell us about your cat</h3>
         <%= simple_form_for @cat do |f| %>
           <%= f.input :name, placeholder: 'Your meow name' %>
-          <%= f.input :adress, placeholder: 'Bordeaux' %>
+          <%= f.input :address, placeholder: 'Bordeaux' %>
           <%= f.input :gender, collection: Cat.genders.keys, prompt: 'Select gender' %>
           <%= f.input :breed %>
           <%= f.input :price, input_html: { min: '0', step: 'any' }, placeholder: 'For a day' %>
