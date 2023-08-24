@@ -49,6 +49,7 @@ body {
 
 #map {
   border: 3px solid white;
+  height: 470px;
 }
 
 #description, #booking {
@@ -60,13 +61,6 @@ body {
 #booking {
   &>form {
     justify-content: space-between;
-  }
-
-  .book-cat {
-    width: 100px;
-    border: 1px solid grey;
-    border-radius: 5px;
-    float: right;
   }
 }
 
@@ -86,6 +80,7 @@ body {
   p {
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 0;
   }
 
   .price{

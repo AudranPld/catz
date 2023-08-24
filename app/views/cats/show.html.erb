@@ -24,7 +24,7 @@
                     input_html: { data: { mode: "range", inline: true, controller: "datepicker" } },
                     label: "Add an availability" %>
         <% f.hidden_field  :ending_date, as: :date %>
-        <%= f.button :submit, "Book #{@cat.name}", class: "book-cat" %>
+        <%= f.button :submit, "Book #{@cat.name}", class: "green-btn", style: "float: right;" %>
       <% end %>
     </div>
   </div>
