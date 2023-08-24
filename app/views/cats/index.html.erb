@@ -11,10 +11,10 @@
     <%= form_with url: cats_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
             params[:query],
-            class: "form-control",
+            class: " searchbar form-control rounded-pill mr-2",
             placeholder: "Search a cat by name or breed"
         %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <%= submit_tag "Search", name: "", class: "btn btn-orange rounded-pill" %>
     <% end %>
   </div>
 </div>
