@@ -1,9 +1,11 @@
 
 #catz {
-  font-weight: bold;
   color: #333;
   margin: 1px 0;
+  text-decoration: none;
+  font-family: 'Merriweather', serif;
   font-size: 28px;
+  font-weight: 600;
 }
 
 .navbar-lewagon {
@@ -21,21 +23,6 @@
   width: 40px;
 }
 
-a {
-  color: #DB8434;
-  text-decoration: none;
-
-  &:hover {
-    color: #9a5718;
-  }
-}
-
 .navbar > h1 {
   font-size: 48px;
-}
-
-
-.typo {
-  font-family: 'Borel', cursive;
-  font-family: 'Merriweather', serif;
 }

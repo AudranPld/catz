@@ -1,22 +1,23 @@
-  <div class="title-div">
-    <h1 class="typo">Which cat do you like ?</h1>
-    <% if user_signed_in? %>
-      <%= link_to 'See all my catz', admin_cats_path, class: "custom-button title-btn" %>
-      <% end %>
-  </div>
 
-  <div class="row justify-content-center">
-    <div class="col-sm-8 my-3">
-      <%= form_with url: cats_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query,
-              params[:query],
-              class: " searchbar form-control rounded-pill mr-2 p-2",
-              placeholder: "Search a cat by name or breed"
-          %>
-        <%= submit_tag "Search", name: "", class: "btn btn-orange rounded-pill" %>
-      <% end %>
-    </div>
+<div class="title-div">
+  <h1>Which cat do you like ?</h1>
+  <% if user_signed_in? %>
+    <%= link_to 'See all my catz', admin_cats_path, class: "blue-btn" %>
+    <% end %>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: cats_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: " searchbar form-control rounded-pill mr-2 p-2",
+            placeholder: "Search a cat by name or breed"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-orange rounded-pill" %>
+    <% end %>
   </div>
+ </div>
 
   <div class="card-main">
     <% @cats.each do |cat| %>
