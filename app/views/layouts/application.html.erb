@@ -21,12 +21,12 @@
       <%= link_to cats_path do %>
         <img src="https://cdn4.iconfinder.com/data/icons/animals-177/512/Cat-512.png" width="50px" height="50px">
       <% end %>
-      <%= link_to 'Catz', cats_path, class: "typo", id: "catz" %>
+      <%= link_to 'Catz', cats_path, id: "catz" %>
       <div>
         <% if user_signed_in? %>
-          <%= link_to 'Sign out', destroy_user_session_path, class: "custom-button", data: { turbo_method: :delete } %>
+          <%= link_to 'Sign out', destroy_user_session_path, class: "orange-btn", data: { turbo_method: :delete } %>
         <% else %>
-          <%= link_to 'Sign in / up', new_user_session_path, class: "custom-button" %>
+          <%= link_to 'Sign in / up', new_user_session_path, class: "orange-btn" %>
         <% end %>
       </div>
     </nav>
