@@ -1,5 +1,5 @@
 class CatsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index]
 
   def index
     @cats = Cat.all
@@ -13,6 +13,8 @@ class CatsController < ApplicationController
 
   def show
     @cat = Cat.find(params[:id])
+    @reservation = Reservation.new
+    @marker = [{ lat: @cat.latitude, lng: @cat.longitude }]
   end
 
   def new
@@ -32,6 +34,6 @@ class CatsController < ApplicationController
   private
 
   def cat_params
-    params.require(:cat).permit(:name, :adress, :gender, :breed, :price, :photo)
+    params.require(:cat).permit(:name, :address, :gender, :breed, :price, :photo)
   end
 end

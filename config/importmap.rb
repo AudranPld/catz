@@ -18,3 +18,5 @@ pin "@fullcalendar/timegrid/index.js", to: "https://ga.jspm.io/npm:@fullcalendar
 pin "preact", to: "https://ga.jspm.io/npm:preact@10.12.1/dist/preact.module.js"
 pin "preact/compat", to: "https://ga.jspm.io/npm:preact@10.12.1/compat/dist/compat.module.js"
 pin "preact/hooks", to: "https://ga.jspm.io/npm:preact@10.12.1/hooks/dist/hooks.module.js"
+pin "mapbox-gl", to: "https://ga.jspm.io/npm:mapbox-gl@2.15.0/dist/mapbox-gl.js"
+pin "process", to: "https://ga.jspm.io/npm:@jspm/core@2.0.1/nodelibs/browser/process-production.js"
