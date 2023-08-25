@@ -14,6 +14,7 @@ class CatsController < ApplicationController
   def show
     @cat = Cat.find(params[:id])
     @reservation = Reservation.new
+    @reservations = Reservation.where(cat_id: params[:id])
     @marker = [{ lat: @cat.latitude, lng: @cat.longitude }]
   end
 

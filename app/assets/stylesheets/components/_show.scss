@@ -24,8 +24,8 @@ body {
   display: flex;
 }
 
-.row1 {
-  margin-bottom: 20px;
+.row2 {
+  margin-top: 20px;
 }
 
 #map, #description {
@@ -42,9 +42,15 @@ body {
     object-fit: cover;
 }
 
-#map, #picture img, #description, #booking, .comments   {
+#map, #picture img, #description, #booking, #bookings, .comments   {
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+#bookings {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px;
 }
 
 #map {
