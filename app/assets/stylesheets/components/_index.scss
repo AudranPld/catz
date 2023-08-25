@@ -4,7 +4,7 @@
 @import "form_legend_clear";
 @import "navbar";
 
-.title-div {
+.title-div-index {
   text-align: center;
 }
 
@@ -25,4 +25,14 @@
 
 .row{
   margin-top: -10px;
+}
+
+.title-div-admin-index{
+  display: flex;
+  justify-content: space-between;
+}
+
+.my-cats-container {
+  margin-bottom: -80px; /* Hauteur du footer */
+  padding-bottom: 80px; /* Hauteur du footer */
 }

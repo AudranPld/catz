@@ -1,25 +1,27 @@
-<div class="title-div">
-  <h1>All my cats</h1>
-  <% if user_signed_in? %>
-    <%= link_to 'Add a cat', new_cat_path, class: "orange-btn blue-btn" %>
-    <% end %>
-</div>
-<div class="card-main">
-  <% current_user.cats.each do |cat| %>
-    <%= link_to cat_path(cat) do %>
-    <div class="card-index">
-      <%= cl_image_tag cat.photo.key %>
-      <div class="card-index-infos">
-        <div>
-          <h2><%= cat.name %></h2>
-          <p><%= cat.breed %></p>
-        </div>
-        <div class="card-index-right">
-          <h2><i class="fa-solid fa-<%= cat.gender == "female" ? "venus" : "mars" %>" style="color: #DB8434;;"></i></h2>
-          <p><%= cat.price %> € / d</p>
+<div class="container my-cats-container">
+  <div class="title-div-admin-index">
+    <h1>All my cats</h1>
+    <% if user_signed_in? %>
+      <%= link_to 'Add a cat', new_cat_path, class: "orange-btn blue-btn" %>
+      <% end %>
+  </div>
+  <div class="card-main">
+    <% current_user.cats.each do |cat| %>
+      <%= link_to cat_path(cat) do %>
+      <div class="card-index">
+        <%= cl_image_tag cat.photo.key %>
+        <div class="card-index-infos">
+          <div>
+            <h2><%= cat.name %></h2>
+            <p><%= cat.breed %></p>
+          </div>
+          <div class="card-index-right">
+            <h2><i class="fa-solid fa-<%= cat.gender == "female" ? "venus" : "mars" %>" style="color: #DB8434;;"></i></h2>
+            <p><%= cat.price %> € / d</p>
+          </div>
         </div>
       </div>
-    </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>

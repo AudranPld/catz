@@ -24,33 +24,23 @@
         <%= link_to 'Catz', cats_path, id: "catz" %>
         </div>
         <div class="d-flex align-items-center ml-auto">
-        <% if user_signed_in? %>
-          <%= link_to 'See all my catz', admin_cats_path, class: "blue-btn" %>
-        <% end %>
-        <div class="px-2"></div>
-      <div>
-        <% if user_signed_in? %>
-          <%= link_to 'Sign out', destroy_user_session_path, class: "orange-btn", data: { turbo_method: :delete } %>
-        <% else %>
-          <%= link_to 'Sign in / up', new_user_session_path, class: "orange-btn" %>
-        <% end %>
-      </div>
-      </div>
+          <% if user_signed_in? %>
+            <%= link_to 'See all my catz', admin_cats_path, class: "blue-btn" %>
+          <% end %>
+          <div class="px-2"></div>
+          <div>
+            <% if user_signed_in? %>
+              <%= link_to 'Sign out', destroy_user_session_path, class: "orange-btn", data: { turbo_method: :delete } %>
+            <% else %>
+              <%= link_to 'Sign in / up', new_user_session_path, class: "orange-btn" %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </nav>
-    <div class="container">
-      <%= yield %>
-    </div>
-    </div>
-
-    <div class="footer">
-      <div class="footer-links">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+      <div class="container">
+        <%= yield %>
       </div>
-      <div class="footer-copyright">
-        Made with <i class="fas fa-heart"></i> at Le Wagon
-      </div>
+      <%= render partial: 'layouts/footer' %>
   </body>
 </html>
