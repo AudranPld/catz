@@ -6,3 +6,36 @@
 @import "navbar";
 @import "titles";
 @import "bookings";
+
+.title-div-index {
+  text-align: center;
+}
+
+.title-div>h1{
+  font-size: 32px;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.card-main>a {
+  color: #DB8434;
+  text-decoration: none;
+
+  &:hover {
+    color: #9a5718;
+  }
+}
+
+.row{
+  margin-top: -10px;
+}
+
+.title-div-admin-index{
+  display: flex;
+  justify-content: space-between;
+}
+
+.my-cats-container {
+  margin-bottom: -80px; /* Hauteur du footer */
+  padding-bottom: 80px; /* Hauteur du footer */
+}
