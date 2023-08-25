@@ -9,7 +9,7 @@ class ReservationsController < ApplicationController
 
     @reservation.starting_date = Date.parse(params[:reservation][:starting_date].split(" to ")[0])
     @reservation.ending_date = Date.parse(params[:reservation][:starting_date].split(" to ")[1])
-    @reservation.user_id = User.last.id #current_user.id
+    @reservation.user_id = current_user.id #User.last.id
     @reservation.cat_id = params[:cat_id]
     if @reservation.save
       redirect_to cat_reservations_path(@reservation.cat_id), notice: "The reservation is successfully created."

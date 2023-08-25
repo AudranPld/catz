@@ -50,7 +50,7 @@ body {
 #bookings {
   width: 100%;
   background-color: #ffffff;
-  padding: 10px;
+  padding: 20px;
 }
 
 #map {
@@ -70,7 +70,7 @@ body {
   }
 }
 
-#description {
+#description, #bookings {
   h2 {
     font-size: 24px;
     margin-bottom: 10px;
@@ -125,12 +125,9 @@ body {
   }
 }
 
-
 .user-name{
   margin-right: 10px;
 }
-
-
 
 .your-custom-class, .reservation_starting_date {
   margin-bottom: 0;

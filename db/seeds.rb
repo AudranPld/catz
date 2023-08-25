@@ -50,9 +50,9 @@ Faker::Config.locale = 'fr'
 
 5.times do |index|
   if index == 0
-    user = User.create({ email: "test@test.test", password: "testtest"})
+    user = User.create({ email: "test@test.test", password: "testtest", name: "Patrick Test"})
   else
-    user = User.create({ email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8) })
+    user = User.create({ email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), name: Faker::Name.name })
   end
   2.times do
     cat_name = cats_name.sample
@@ -69,16 +69,18 @@ Faker::Config.locale = 'fr'
     file = URI.open(url)
     cat.photo.attach(io: file, filename: "cat_image.jpg", content_type: "image/jpg")
     cat.save!
+  end
+end
 
-    rand(1..3).times do
-      dat = Faker::Date.between(from: Date.new(2000, 1, 1), to: Date.today)
-      Reservation.create({
-        starting_date: Faker::Date.between(from: Date.new(2000, 1, 1), to: Date.today),
-        ending_date: Faker::Date.between(from: dat, to: Date.today),
-        user: user,
-        cat: cat
-      })
-    end
+Cat.all.each do |cat|
+  rand(1..3).times do
+    dat = Faker::Date.between(from: Date.today, to: Date.new(2023, 12, 12))
+    Reservation.create({
+      starting_date: Faker::Date.between(from: Date.today, to: dat),
+      ending_date: Faker::Date.between(from: dat, to: Date.new(2023, 12, 12)),
+      user: User.all.sample,
+      cat: cat
+    })
   end
 end
 puts 'Done'
