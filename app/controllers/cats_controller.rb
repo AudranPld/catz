@@ -32,7 +32,7 @@ class CatsController < ApplicationController
     @cat = Cat.new(cat_params)
     @cat.user_id = current_user.id
     if @cat.save!
-      redirect_to cats_path(@cat)
+      redirect_to admin_cats_path
     else
       render :new, status: :unprocessable_entity
     end
