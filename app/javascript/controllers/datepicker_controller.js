@@ -7,8 +7,12 @@ export default class extends Controller {
       onClose: function(selectedDates, dateStr, instance){
         console.log(selectedDates);
         console.log(selectedDates[0])
-     }
-
+     },
+     inline: true,
+     dateFormat: "Y-m-d",
+     mode: "range",
+     minDate: "today",
+     disable: ["2023-08-30"]
     })
   }
 

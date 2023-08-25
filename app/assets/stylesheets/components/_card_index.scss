@@ -48,3 +48,12 @@
 .card-index-right > h2 {
   text-align: right;
 }
+
+.card-main>a {
+  color: #DB8434;
+  text-decoration: none;
+
+  &:hover {
+    color: #9a5718;
+  }
+}

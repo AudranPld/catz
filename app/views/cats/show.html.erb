@@ -21,12 +21,35 @@
         <%= f.input :starting_date,
                     as: :string,
                     class: "your-custom-class",
-                    input_html: { data: { mode: "range", inline: true, controller: "datepicker" } },
+                    input_html: {
+                      data: {
+                        controller: "datepicker"
+                        }
+                      },
                     label: "Add an availability" %>
         <% f.hidden_field  :ending_date, as: :date %>
         <%= f.button :submit, "Book #{@cat.name}", class: "green-btn", style: "float: right;" %>
       <% end %>
     </div>
+  </div>
+</div>
+<div class="row2"<%= @cat.user.id == current_user.id ? '' : 'style=display:none;' %>>
+  <div id="bookings">
+    <h2>Bookings</h2>
+    <table style="border='1px solid black' ">
+      <tr>
+        <td>Users</td>
+        <td>Starting day</td>
+        <td>Ending day</td>
+      </tr>
+      <% @reservations.each do |reservation| %>
+        <tr>
+          <td><%= User.find(reservation.user_id).email %></td>
+          <td><%= reservation.starting_date %></td>
+          <td><%= reservation.ending_date %></td>
+        </tr>
+      <% end %>
+    </table>
   </div>
 </div>
 <div class="comments">
