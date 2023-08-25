@@ -14,8 +14,14 @@ class CatsController < ApplicationController
   def show
     @cat = Cat.find(params[:id])
     @reservation = Reservation.new
-    @reservations = Reservation.where(cat_id: params[:id])
     @marker = [{ lat: @cat.latitude, lng: @cat.longitude }]
+    @disabled_dates = @cat.reservations.map do |a|
+      {
+        from: a.starting_date,
+        to: a.ending_date
+      }
+    end
+
   end
 
   def new

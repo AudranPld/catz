@@ -23,7 +23,8 @@
                     class: "your-custom-class",
                     input_html: {
                       data: {
-                        controller: "datepicker"
+                        controller: "datepicker",
+                        datepicker_disabled_dates_value: @disabled_dates.to_json
                         }
                       },
                     label: "Add an availability" %>
@@ -42,9 +43,9 @@
         <td>Starting day</td>
         <td>Ending day</td>
       </tr>
-      <% @reservations.each do |reservation| %>
+      <% @cat.reservations.each do |reservation| %>
         <tr>
-          <td><%= User.find(reservation.user_id).email %></td>
+          <td><%= User.find(reservation.user_id).name %></td>
           <td><%= reservation.starting_date %></td>
           <td><%= reservation.ending_date %></td>
         </tr>
